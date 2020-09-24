@@ -1,20 +1,37 @@
 <template>
    <div>
-        <h1>Lubie placki</h1>
+        <textarea class="textarea" placeholder="enter your quote"></textarea>
    </div>
 </template>
 
 <script>
 export default {
-    data: function(){
-        return{
-            
+    props:{
+        name: String,
+    },
+
+    methods: {
+        changeName: function (){
+           this.name = 'jacek'
         }
     }
-    
 }
 </script>
 
-<style scoped>
-
+<style >
+.textarea{
+    max-width: 50vw;
+    min-width: 50vw;
+    height: auto;
+    font-size:2em;
+    border: none;
+    outline: none;
+    /*
+    box-shadow: 2px 4px 10px 10px rgba(255,255,255,.5);
+    /*/
+    font-family: Arizonia;
+    padding: 1em;
+    letter-spacing: .1em;
+   
+}
 </style>

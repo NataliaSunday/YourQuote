@@ -1,20 +1,19 @@
 <template>
    <div>
-        <textarea class="textarea" placeholder="enter your quote"></textarea>
+        <textarea class="textarea" placeholder="enter your quote" v-model="quoteContent"></textarea>
+        
    </div>
 </template>
 
 <script>
 export default {
+ 
     props:{
-        name: String,
-    },
-
-    methods: {
-        changeName: function (){
-           this.name = 'jacek'
+        quoteContent:{
+            type: String,
+            required: true,
         }
-    }
+    },
 }
 </script>
 

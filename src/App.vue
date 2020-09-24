@@ -1,6 +1,7 @@
 <template>
     <div class="container">
-        <enterQuote :name="name"></enterQuote>
+        <enterQuote></enterQuote>
+        <p> {{ quoteContent }} </p>
     </div>
 </template>
 
@@ -10,7 +11,7 @@ import enterQuote from './enterQuote.vue';
    export default {
     data: function(){
         return{
-            name: "Ania",
+            quoteContent,
         }
     }, 
     components: {

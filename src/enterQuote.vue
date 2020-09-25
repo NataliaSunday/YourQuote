@@ -15,6 +15,7 @@ export default {
     methods: {
         callToParent(event) {
             this.$emit('callingToParent', this.content);
+            this.content = '';
         }
     }
  
@@ -35,6 +36,7 @@ export default {
     font-family: Arizonia;
     padding: 1em;
     letter-spacing: .1em;
+   
    
 }
 </style>

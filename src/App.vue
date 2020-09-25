@@ -1,22 +1,29 @@
 <template>
     <div class="container">
-        <enterQuote  @callingToParent="callingFromChild"></enterQuote>
+        <enterQuote @callingToParent="callingFromChild"></enterQuote>
+        <quote :quotesArray="contentOfQuote"></quote>
     </div>
 </template>
 
 <script>
+
 import enterQuote from './enterQuote.vue';
+import quote from './quote.vue';
 
 export default {
+    
     components: {
-        enterQuote
+        enterQuote,
+        quote
     },
-    data:{
-        contentOfQuote: ''
+    data() {
+        return{
+            contentOfQuote: []
+        }
     },
     methods: {
         callingFromChild (value){
-            this.contentOfQuote = value;
+            this.contentOfQuote.push(value);
              console.log('dryn'+ value );
         }
     }
@@ -27,7 +34,7 @@ export default {
 .container{
     width: 100vw;
     height: 100vh;
-    background-color: #B4EDEA;
+    background-color: #88F1FC;
     font-size: 16px;
     display: flex;
     flex-direction: column;

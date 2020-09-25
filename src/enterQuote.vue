@@ -1,19 +1,23 @@
 <template>
    <div>
-        <textarea class="textarea" placeholder="enter your quote" v-model="quoteContent"></textarea>
-        
+        <textarea class="textarea" placeholder="enter your quote" @keyup.enter="callToParent" v-model="content"></textarea>
    </div>
 </template>
 
 <script>
 export default {
- 
-    props:{
-        quoteContent:{
-            type: String,
-            required: true,
+    data: function(){
+        return{
+            content: '',
         }
     },
+
+    methods: {
+        callToParent(event) {
+            this.$emit('callingToParent', this.content);
+        }
+    }
+ 
 }
 </script>
 

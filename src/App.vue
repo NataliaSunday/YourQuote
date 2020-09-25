@@ -1,23 +1,25 @@
 <template>
     <div class="container">
-        <enterQuote></enterQuote>
-        <p> {{ quoteContent }} </p>
+        <enterQuote  @callingToParent="callingFromChild"></enterQuote>
     </div>
 </template>
 
 <script>
 import enterQuote from './enterQuote.vue';
 
-   export default {
-    data: function(){
-        return{
-            quoteContent,
-        }
-    }, 
+export default {
     components: {
         enterQuote
+    },
+    data:{
+        contentOfQuote: ''
+    },
+    methods: {
+        callingFromChild (value){
+            this.contentOfQuote = value;
+             console.log('dryn'+ value );
+        }
     }
-    
 }
 </script>
 

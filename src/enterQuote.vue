@@ -14,8 +14,14 @@ export default {
 
     methods: {
         callToParent(event) {
-            this.$emit('callingToParent', this.content);
-            this.content = '';
+            if(this.content != false){
+                alert(this.content);
+                this.$emit('callingToParent', this.content);
+                this.content = '';
+            }else{
+                alert('Text area is empty');
+            }
+          
         }
     }
  

@@ -7,8 +7,8 @@
 
 <script>
 
-import enterQuote from './enterQuote.vue';
-import quote from './quote.vue';
+import enterQuote from './EnterQuote.vue';
+import quote from './Quote.vue';
 
 export default {
     

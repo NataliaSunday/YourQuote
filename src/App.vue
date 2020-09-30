@@ -1,5 +1,6 @@
 <template>
     <div class="container">
+        <progress-bar></progress-bar>
         <enterQuote @callingToParent="callingFromChild"></enterQuote>
         <quote :quotesArray="contentOfQuote"></quote>
     </div>
@@ -9,12 +10,14 @@
 
 import enterQuote from './EnterQuote.vue';
 import quote from './Quote.vue';
+import progressBar from './ProgressBar.vue';
 
 export default {
     
     components: {
         enterQuote,
-        quote
+        quote,
+        progressBar
     },
     data() {
         return{

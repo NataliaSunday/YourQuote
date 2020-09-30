@@ -1,7 +1,7 @@
 <template>
 <div class="container">
     <article class="article" v-for="(quote, index) in quotesArray" :key='index' >
-        <p class="quote" @click="delate">{{ quote }}</p>    
+        <p class="quote" @click="delate(index)">{{ quote }}</p>    
     </article>   
 </div>
 
@@ -16,8 +16,8 @@ export default {
         }
     },
     methods:{
-        delate: function(){
-            this.quotesArray.splice(this.index, 1);
+        delate: function(index){
+            this.quotesArray.splice(index, 1);
         }
     }
 }

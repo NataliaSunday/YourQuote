@@ -27,7 +27,6 @@ export default {
     methods: {
         callingFromChild (value){
             this.contentOfQuote.push(value);
-             console.log('dryn'+ value );
         }
     }
 }

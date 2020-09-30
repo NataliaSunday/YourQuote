@@ -42,6 +42,9 @@ export default {
     letter-spacing: .05em;
     word-wrap:break-word;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .article:hover{

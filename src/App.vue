@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <progress-bar :quotesArray="contentOfQuote" ></progress-bar>
-        <enter-quote @callingToParent="callingFromChild"></enter-quote>
+        <enter-quote :quotesArray="contentOfQuote" @callingToParent="callingFromChild" ></enter-quote>
         <quote :quotesArray="contentOfQuote"></quote>
     </div>
 </template>

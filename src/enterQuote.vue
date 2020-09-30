@@ -6,28 +6,35 @@
 
 <script>
 export default {
+     props: {
+        quotesArray:{
+            type: Array,
+            required: true
+        }
+    },
     data: function(){
         return{
             content: '',
         }
     },
-
     methods: {
         callToParent(event) {
-            if(this.content != false){
+            if( ( this.content != false ) && ( this.quotesArray.length < 10 ) ){
                 alert(this.content);
                 this.$emit('callingToParent', this.content);
                 this.content = '';
-            }else{
-                alert('Text area is empty');
             }
-          
+            else if( ( this.content != true ) || ( this.quotesArray.length >= 10 ) ){
+                if(this.content == false){
+                    alert('Text area is empty');
+                } else if( this.quotesArray.length >= 10 ){
+                    alert('Too much quotes. You can have ten only');
+                }
+            }
         }
     }
- 
 }
 </script>
-
 <style >
 .textarea{
     max-width: 50vw;

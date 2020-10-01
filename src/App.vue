@@ -1,16 +1,19 @@
 <template>
-    <div class="container">
-        <progress-bar :quotesArray="contentOfQuote" ></progress-bar>
-        <enter-quote :quotesArray="contentOfQuote" @callingToParent="callingFromChild" ></enter-quote>
-        <quote :quotesArray="contentOfQuote"></quote>
+    <div class="main-container">
+        <section class="info">
+            <progress-bar :quotesArray="contentOfQuote" ></progress-bar>
+            <enter-quote :quotesArray="contentOfQuote" @callingToParent="callingFromChild" ></enter-quote>
+        </section>
+       <section class="quotes">
+            <quote :quotesArray="contentOfQuote"></quote>
+       </section>
     </div>
 </template>
 
 <script>
-
-import enterQuote from './EnterQuote.vue';
-import quote from './Quote.vue';
-import progressBar from './ProgressBar.vue';
+import enterQuote from './components/EnterQuote.vue';
+import quote from './components/Quote.vue';
+import progressBar from './components/ProgressBar.vue';
 
 export default {
     
@@ -34,19 +37,31 @@ export default {
 </script>
 
 <style>
-.container{
+.main-container{
     width: 100vw;
-    height: 100vh;
-    background-color: #88F1FC;
-    font-size: 16px;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    background-color: #FCEDF7;
+    font-size: 16px;
+    overflow-x: hidden;
 }
+
+.info{
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+   
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arizonia;
+    color: #FCEDF7;
 }
 </style>
